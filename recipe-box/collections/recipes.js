@@ -1,28 +1,37 @@
-Recipes = new Meteor.Collection('recipes');
+import SimpleSchema from 'simpl-schema';
+SimpleSchema.extendOptions(['autoform']);
+
+Recipes = new Mongo.Collection('recipes');
 
 RecipeSchema = new SimpleSchema({
     name: {
-        type: String,
-        label: 'Name'
+        label: "Name",
+        type: String
     },
     desc: {
-        type: String,
-        label: 'Description'
+        label: "Description",
+        type: String
     },
     author: {
         type: String,
-        label: 'Author',
-        autoValue: function () {
-            return this.UserId;
-        }
+        label: "Author",
+        autoform: {
+            type: "hidden"
+        },
+        autoValue: function(){
+            return this.userId;
+        },
     },
     createdAt: {
         type: Date,
-        label: 'Date',
-        autoValue: function () {
+        label: "CreatedAt",
+        autoform: {
+            type: "hidden"
+        },
+        autoValue: function() {
             return new Date();
-        }
+        },
     }
 });
 
-Recipes.attachSchema (RecipeSchema);
+Recipes.attachSchema(RecipeSchema);
