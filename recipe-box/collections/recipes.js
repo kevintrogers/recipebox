@@ -11,6 +11,21 @@ Recipes.allow({
     
 });
 
+Ingredients = new Object({
+        ingredient: {
+            
+            type: String
+            
+        },
+       
+        amount: {
+
+            type: String
+        }
+    
+});
+
+
 RecipeSchema = new SimpleSchema({
     name: {
         label: "Name",
@@ -19,6 +34,10 @@ RecipeSchema = new SimpleSchema({
     desc: {
         label: "Description",
         type: String
+    },
+    ingredients: {
+        type: Array,
+        custom: Ingredients
     },
     author: {
         type: String,
@@ -43,3 +62,4 @@ RecipeSchema = new SimpleSchema({
 });
 
 Recipes.attachSchema(RecipeSchema);
+Recipes.attachSchema(Ingredients)
