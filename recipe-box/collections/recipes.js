@@ -12,8 +12,6 @@ Recipes.allow({
 });
 
 
-
-
 RecipeSchema = new SimpleSchema({
     
     name: {
@@ -30,6 +28,14 @@ RecipeSchema = new SimpleSchema({
      "ingredients.$": Object,
      "ingredients.$.name": String,
      "ingredients.$.amount": String,
+      inMenu: {
+          type: Boolean,
+          defaultValue: false,
+          optional: true,
+            autoform: {
+                type: 'hidden'
+            }
+      },
     author: {
         type: String,
         label: "Author",
