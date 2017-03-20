@@ -1,1 +1,3 @@
 Meteor.subscribe('recipes');
+
+ 
