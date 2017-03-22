@@ -1,9 +1,13 @@
 <template name='Recipes'>
     {{> NewRecipe }}
     <section class='recipes'>
-        {{#each recipes}}
-        <h3>{{name}}</h3>
-        {{> Recipe}}
-        {{/each}}
+        {{#if Template.subscriptionsReady}}
+            {{#each recipes}}
+                <h3>{{name}}</h3>
+                {{> Recipe}}
+            {{/each}}
+        {{else}}
+            <p>Loading...</p>
+        {{/if}}
     </section>
 </template>
