@@ -1,6 +1,7 @@
 Template.RecipeSingle.onCreated(function() {
   this.autorun(() => {
-    this.subscribe('recipes');
+    var id = FlowRouter.getParam('id');
+    this.subscribe('singleRecipe', id);
   });
 });
 
