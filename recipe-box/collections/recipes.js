@@ -33,7 +33,7 @@ RecipeSchema = new SimpleSchema({
       inMenu: {
           type: Boolean,
           defaultValue: false,
-          optional: true,
+          
             autoform: {
                 type: 'hidden'
             }
@@ -56,7 +56,8 @@ RecipeSchema = new SimpleSchema({
         },
         autoValue: function() {
             return new Date();
-        },
+        }
+
     }
 });
 
