@@ -41,3 +41,12 @@ FlowRouter.route('/recipe/:id', {
         BlazeLayout.render('MainLayout', {main: 'RecipeSingle'});
     } 
 });
+
+FlowRouter.route('/menu', {
+    name: 'menu',
+    action() {
+        BlazeLayout.render('MainLayout', {main: 'Menu'});
+        
+    }
+
+});
