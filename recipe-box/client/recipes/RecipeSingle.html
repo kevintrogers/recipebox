@@ -1,9 +1,10 @@
 <template name='RecipeSingle'>
+    <div class='recipe'>
     <h1>{{recipe.name}}</h1>
     <h4>{{recipe.desc}}</h4>
 {{#each recipe.ingredients}}
    <span> {{name}}</span> -- <span>{{amount}}</span><br>
    {{/each}}
-    
+    </div>
     
 </template>
