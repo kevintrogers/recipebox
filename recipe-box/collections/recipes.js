@@ -69,6 +69,9 @@ Meteor.methods({
             }
         })
         
+    },
+    deleteRecipe: function(id) {
+        Recipes.remove(id);
     }
 });
 
