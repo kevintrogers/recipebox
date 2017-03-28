@@ -13,13 +13,7 @@
         {{else}}
         <button class='btn-primary toggle-menu'>Add To Menu</button>
         {{/if}}
-{{#autoForm collection="Recipes" id=updateRecipeId type="update" doc=this}}
+{{>quickForm collection="Recipes" doc=this id=updateRecipeId type="update"}}
 
-      {{> afQuickField name='name'}}
-      {{> afQuickField name='desc'}}
-      {{> afQuickField name='ingredients'}}
-      <button type="submit" class="btn btn-primary">Update</button>
-
- {{/autoForm}}
     </article>
 </template>
