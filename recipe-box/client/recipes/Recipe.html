@@ -1,19 +1,25 @@
 <template name='Recipe'>
     <article class='recipe{{#if inMenu}}in-menu{{/if}}'>
-        
-        <p>{{desc}}</p>
-        <p>{{#each ingredients}}
-        <span class='ingredient'>{{name}} - {{amount}}</span><br>
-        {{/each}}
-        </p>
-        <a href='/recipe/{{_id}}'>View Details</a>
-        <i class='fa fa-trash'></i> 
-        {{#if inMenu}}
-        <button class='btn-deny toggle-menu'>Remove From Menu</button>
+        <h3>{{name}}</h3>
+        {{#if $.Session.get 'editMode'}}
+            {{>quickForm collection="Recipes" doc=this id=updateRecipeId type="update" autosave=true}}
         {{else}}
-        <button class='btn-primary toggle-menu'>Add To Menu</button>
+                <p>{{desc}}</p>
+        <p>{{#each ingredients}}
+            <span class='ingredient'>{{name}} - {{amount}}</span><br>
+            {{/each}}
+            </p>
+            <a href='/recipe/{{_id}}'>View Details</a>
+ 
+            {{#if inMenu}}
+                <button class='btn-deny toggle-menu'>Remove From Menu</button>
+                {{else}}
+                <button class='btn-primary toggle-menu'>Add To Menu</button>
+            {{/if}}
         {{/if}}
-{{>quickForm collection="Recipes" doc=this id=updateRecipeId type="update"}}
+
+        <i class='fa fa-pencil'></i>
+        <i class='fa fa-trash'></i>
 
     </article>
 </template>
