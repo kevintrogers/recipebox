@@ -1,7 +1,7 @@
 <template name='Recipe'>
     <article class='recipe{{#if inMenu}}in-menu{{/if}}'>
         <h3>{{name}}</h3>
-        {{#if $.Session.get 'editMode'}}
+        {{#if editMode}}
             {{>quickForm collection="Recipes" doc=this id=updateRecipeId type="update" autosave=true}}
         {{else}}
                 <p>{{desc}}</p>
