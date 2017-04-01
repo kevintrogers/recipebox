@@ -10,9 +10,9 @@ Template.ShoppingList.helpers({
     }
 });
 
-Template.ShoppingList.events({
-    'click.add-to-list': function() {
-        Meteor.call('addToList', this._id, this.inMenu);
-    },
+// Template.ShoppingList.events({
+//     'click.add-to-list': function() {
+//         Meteor.call('addToList');
+//     }, don't know if I need this yet
 
-});
+// });
