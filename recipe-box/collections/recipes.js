@@ -2,6 +2,7 @@ import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
 Recipes = new Mongo.Collection('recipes');
+ShoppingList = new Mongo.Collection('shoppingList');
 
 Recipes.allow({
     insert: function(userId, doc){
@@ -13,6 +14,16 @@ Recipes.allow({
     
 });
 
+IngredientSchema = new SimpleSchema {
+    ingredient: {
+        label: "name",
+        type: String
+    },
+    ingredient: {
+        label: "amount",
+        type: "String"
+    }
+}
 
 RecipeSchema = new SimpleSchema({
     
@@ -70,12 +81,13 @@ Meteor.methods({
         })
         
     },
-    addToList: function(){
-        
-    },
     deleteRecipe: function(id) {
         Recipes.remove(id);
+    },
+    addToList: function(){
+        
     }
 });
 
 Recipes.attachSchema(RecipeSchema);
+ShoppingList.attachSchema(IngredientSchema);
