@@ -70,6 +70,9 @@ Meteor.methods({
         })
         
     },
+    addToList: function(){
+        
+    },
     deleteRecipe: function(id) {
         Recipes.remove(id);
     }

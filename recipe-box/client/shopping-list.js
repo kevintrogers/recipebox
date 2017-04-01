@@ -9,3 +9,10 @@ Template.ShoppingList.helpers({
         return Recipes.find({inMenu: true});
     }
 });
+
+Template.ShoppingList.events({
+    'click.add-to-list': function() {
+        Meteor.call('addToList', this._id, this.inMenu);
+    },
+
+});
