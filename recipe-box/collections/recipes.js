@@ -14,6 +14,16 @@ Recipes.allow({
     
 });
 
+ShoppingList.allow({
+    insert: function(userId){
+        return !!userId;
+    },
+    update: function(userId, doc){
+        return !!userId;
+    }
+    
+});
+
 IngredientSchema = new SimpleSchema ({
     ingredient: {
         label: "name",
@@ -22,6 +32,26 @@ IngredientSchema = new SimpleSchema ({
     amount: {
         label: "amount",
         type: "String"
+    },
+    author: {
+        type: String,
+        label: "Author",
+        autoform: {
+            type: "hidden"
+        },
+        autoValue: function(){
+            return this.userId;
+        },
+    },
+    createdAt: {
+        type: Date,
+        label: "CreatedAt",
+        autoform: {
+            type: "hidden"
+        },
+        autoValue: function() {
+            return new Date();
+        }
     }
 });
 
