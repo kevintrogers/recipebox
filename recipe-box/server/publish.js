@@ -6,3 +6,7 @@ Meteor.publish('RecipeSingle', function(id) {
     check(id, String);
     return Recipes.find({_id: id})
 });
+
+Meteor.publish('shopping-list', function() {
+    return ShoppingList.find({});
+});

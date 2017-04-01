@@ -6,7 +6,8 @@ Template.ShoppingList.onCreated(function() {
 
 Template.ShoppingList.helpers({
     shoppingList: () => {
-        return Recipes.find({inMenu: true});
+        return Recipes.find({inMenu: true}) && ShoppingList.find({});
+        
     }
 });
 

@@ -1,5 +1,11 @@
-Template.NewItem.events ({
-    'click .fa-close': function () {
-        Session.set('newItem', false);
+Template.NewItem.onCreated(function() {
+  this.autorun(() => {
+    this.subscribe('shoppingList');
+  });
+});
+
+Template.NewItem.helpers({
+    recipes: () => {
+        return ShoppingList.find({});
     }
-})
+});
