@@ -2,7 +2,7 @@ import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
 Recipes = new Mongo.Collection('recipes');
-ShoppingList = new Mongo.Collection('shoppingList');
+ShoppingItems = new Mongo.Collection('shoppingList');
 
 Recipes.allow({
     insert: function(userId, doc){
@@ -14,7 +14,7 @@ Recipes.allow({
     
 });
 
-ShoppingList.allow({
+ShoppingItems.allow({
     insert: function(userId){
         return !!userId;
     },
@@ -120,4 +120,4 @@ Meteor.methods({
 });
 
 Recipes.attachSchema(RecipeSchema);
-ShoppingList.attachSchema(IngredientSchema);
+ShoppingItems.attachSchema(IngredientSchema);
