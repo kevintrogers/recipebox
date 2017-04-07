@@ -7,6 +7,10 @@ Meteor.publish('singleRecipe', function(id) {
     return Recipes.find({_id: id})
 });
 
-Meteor.publish('shopping-list', function() {
-    return ShoppingList.find({});
-});
+if (Meteor.isServer) {
+  // This code only runs on the server
+  Meteor.publish('shoppingItems', function itemPublication() {
+    return ShoppingItems.find();
+  });
+}
+ 

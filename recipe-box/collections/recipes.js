@@ -17,11 +17,7 @@ Recipes.allow({
 ShoppingItems.allow({
     insert: function(userId){
         return !!userId;
-    },
-    update: function(userId, doc){
-        return !!userId;
     }
-    
 });
 
 IngredientSchema = new SimpleSchema ({
