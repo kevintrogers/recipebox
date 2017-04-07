@@ -9,7 +9,7 @@ Meteor.publish('singleRecipe', function(id) {
 
 if (Meteor.isServer) {
   // This code only runs on the server
-  Meteor.publish('shoppingItems', function itemPublication() {
+  Meteor.publish('shoppingList', function tasksPublication() {
     return ShoppingItems.find();
   });
 }

@@ -1,14 +1,28 @@
 <template name='ShoppingList'>
     <h1 class='page-title'>My Shopping List</h1>
+    {{> NewItem}}
     <ul class='shopping-list'>
         {{#each shoppingList}}
             {{#each ingredients}}
             <li>{{name}} -- <span class='amount'>{{amount}}</span></li>
             {{/each}}
+           
+            
             {{else}}
             <li><h4>Your Shopping List is Empty.</h4></li>
-        {{/each}}
         
+            {{/each}}
+         {{> OtherItems}}
     </ul>
     
 </template>
+
+<Template name='OtherItems'>
+    {{#each shoppingList}}
+        
+            <li>{{name}} -- <span class='amount'>{{amount}}</span></li>
+        
+    {{/each}}
+    
+
+</Template>

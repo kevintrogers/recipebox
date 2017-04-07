@@ -21,7 +21,7 @@ ShoppingItems.allow({
 });
 
 IngredientSchema = new SimpleSchema ({
-    ingredient: {
+    name: {
         label: "name",
         type: String
     },
