@@ -75,3 +75,7 @@ OrganizationSchema = new SimpleSchema ({
         }
     }
 });
+
+
+Members.attachSchema(MembersSchema);
+Organizations.attachSchema(OrganizationSchema);
