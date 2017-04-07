@@ -1,10 +1,10 @@
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-Recipes = new Mongo.Collection('recipes');
-ShoppingItems = new Mongo.Collection('shoppingList');
+Organizations = new Mongo.Collection('organizations');
+Members = new Mongo.Collection('members');
 
-Recipes.allow({
+Organizations.allow({
     insert: function(userId, doc){
         return !!userId;
     },
@@ -14,20 +14,15 @@ Recipes.allow({
     
 });
 
-ShoppingItems.allow({
-    insert: function(userId){
-        return !!userId;
-    }
-});
-
-IngredientSchema = new SimpleSchema ({
+MembersSchema = new SimpleSchema ({
     name: {
         label: "name",
         type: String
     },
-    amount: {
+    role: {
         label: "amount",
-        type: "String"
+        type: "String",
+        options: coming_soon
     },
     author: {
         type: String,
@@ -50,31 +45,15 @@ IngredientSchema = new SimpleSchema ({
         }
     }
 });
-
-RecipeSchema = new SimpleSchema({
-    
+OrganizationSchema = new SimpleSchema ({
     name: {
-        label: "Name",
+        label: "name",
         type: String
     },
-    desc: {
-        label: "Description",
-        type: String
-    },
-      ingredients: {
+    memebers: {
+        label: "members",
         type: Array
-     },
-     "ingredients.$": Object,
-     "ingredients.$.name": String,
-     "ingredients.$.amount": String,
-      inMenu: {
-          type: Boolean,
-          defaultValue: false,
-          
-            autoform: {
-                type: 'hidden'
-            }
-      },
+    },
     author: {
         type: String,
         label: "Author",
@@ -94,26 +73,5 @@ RecipeSchema = new SimpleSchema({
         autoValue: function() {
             return new Date();
         }
-
     }
 });
-
-Meteor.methods({
-    toggleMenuItem: function(id, currentMenuState){
-        Recipes.update(id, {
-            $set: {
-                inMenu: !currentMenuState
-            }
-        })
-        
-    },
-    deleteRecipe: function(id) {
-        Recipes.remove(id);
-    },
-    deleteItems: function(id) {
-        ShoppingItems.remove(id);
-    }
-});
-
-Recipes.attachSchema(RecipeSchema);
-ShoppingItems.attachSchema(IngredientSchema);
