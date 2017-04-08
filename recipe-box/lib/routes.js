@@ -56,5 +56,13 @@ action() {
     BlazeLayout.render('MainLayout', {main: 'ShoppingList'});
     
     }
+});
+    
 
+FlowRouter.route('/organizations', {
+name: 'organizations',
+action() {
+    BlazeLayout.render('MainLayout', {main: 'Organizations'});
+    
+    }
 });

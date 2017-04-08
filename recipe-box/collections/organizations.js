@@ -20,9 +20,9 @@ MembersSchema = new SimpleSchema ({
         type: String
     },
     role: {
-        label: "amount",
+        label: "role",
         type: "String",
-        options: coming_soon
+        
     },
     author: {
         type: String,
@@ -45,12 +45,21 @@ MembersSchema = new SimpleSchema ({
         }
     }
 });
+
 OrganizationSchema = new SimpleSchema ({
     name: {
         label: "name",
         type: String
     },
-    memebers: {
+    id: {
+        label: "ID",
+        type: String,
+        autoform: {
+            type: "hidden"
+        }
+        
+    },
+    members: {
         label: "members",
         type: Array
     },
@@ -75,6 +84,8 @@ OrganizationSchema = new SimpleSchema ({
         }
     }
 });
+
+
 
 
 Members.attachSchema(MembersSchema);
