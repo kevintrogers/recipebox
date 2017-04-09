@@ -14,41 +14,11 @@ Organizations.allow({
     
 });
 
-MembersSchema = new SimpleSchema ({
-    name: {
-        label: "name",
-        type: String
-    },
-    role: {
-        label: "role",
-        type: "String",
-        
-    },
-    author: {
-        type: String,
-        label: "Author",
-        autoform: {
-            type: "hidden"
-        },
-        autoValue: function(){
-            return this.userId;
-        },
-    },
-    createdAt: {
-        type: Date,
-        label: "CreatedAt",
-        autoform: {
-            type: "hidden"
-        },
-        autoValue: function() {
-            return new Date();
-        }
-    }
-});
+
 
 OrganizationSchema = new SimpleSchema ({
-    name: {
-        label: "name",
+    organization: {
+        label: "organization name",
         type: String
     },
     id: {
@@ -60,19 +30,12 @@ OrganizationSchema = new SimpleSchema ({
         
     },
     members: {
-        label: "members",
         type: Array
     },
-    author: {
-        type: String,
-        label: "Author",
-        autoform: {
-            type: "hidden"
-        },
-        autoValue: function(){
-            return this.userId;
-        },
-    },
+        "members.$": Object,
+        "members.$.name": String,
+        "members.$.role": String,
+       
     createdAt: {
         type: Date,
         label: "CreatedAt",
@@ -88,5 +51,5 @@ OrganizationSchema = new SimpleSchema ({
 
 
 
-Members.attachSchema(MembersSchema);
+
 Organizations.attachSchema(OrganizationSchema);
