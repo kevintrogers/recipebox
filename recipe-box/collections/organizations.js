@@ -18,7 +18,7 @@ Organizations.allow({
 
 OrganizationSchema = new SimpleSchema ({
     organization: {
-        label: "organization name",
+        label: "Organization Name",
         type: String
     },
     id: {

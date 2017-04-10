@@ -1,5 +1,13 @@
 <template name='Organizations'>
-    <h3>Organizations</h3>
-    {{> NewOrganization }}
+    <h3>Your Organizations</h3>
+    {{#if $.Session.get 'newOrganization'}}
+            {{> NewOrganization }}
+    {{else}}
+    
+    <button class='btn btn-organization'>Join an Organization</button>
+    <button class='btn btn-deny'>Leave an Organization</button>
+    {{/if}}
+    
+    
     
 </template>

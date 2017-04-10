@@ -60,7 +60,7 @@ action() {
     
 
 FlowRouter.route('/organizations', {
-name: 'organizations',
+name: 'Organizations',
 action() {
     BlazeLayout.render('MainLayout', {main: 'Organizations'});
     

@@ -7,20 +7,7 @@ Template.ShoppingList.onCreated(function() {
   });
 });
 
-Template.Organizations.helpers({
-  options() {
-    return [
-      {
-        
-        options: [
-          {label: "Administrator", value: 'administrator'},
-          {label: "Member", value: 'member'},
-          {label: "Guest", value: 'guest'}
-        ]
-      }
-    ]
-  }
-});
+
 
 Template.Organizations.helpers({
     organizationList: () => {
@@ -30,3 +17,15 @@ Template.Organizations.helpers({
         return listItems;
     }
 });
+
+Template.Organizations.events({
+      'click .btn-organization': () => {
+        Session.set('newOrganization', true);
+      }
+});
+
+// Template.Recipes.events({
+//       'click .new-recipe': () => {
+//         Session.set('newRecipe', true);
+//       }
+// });
