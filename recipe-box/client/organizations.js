@@ -16,3 +16,4 @@ Template.Organizations.events({
         Session.set('newOrganization', true);
       }
 });
+

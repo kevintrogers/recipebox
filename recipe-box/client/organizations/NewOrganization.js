@@ -1,4 +1,5 @@
-Template.Organizations.events ({
+
+Template.NewOrganization.events ({
     'click .fa-close': function () {
         Session.set('newOrganization', false);
     }

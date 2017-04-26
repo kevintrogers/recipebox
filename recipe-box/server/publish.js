@@ -7,10 +7,14 @@ Meteor.publish('singleRecipe', function(id) {
     return Recipes.find({_id: id})
 });
 
+
 if (Meteor.isServer) {
   // This code only runs on the server
   Meteor.publish('shoppingList', function tasksPublication() {
     return ShoppingItems.find();
+  });
+    Meteor.publish('organizations', function tasksPublication() {
+    return Organizations.find();
   });
 }
  

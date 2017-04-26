@@ -1,8 +1,8 @@
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-Organizations = new Mongo.Collection('organizations');
-Members = new Mongo.Collection('members');
+Organizations = new Meteor.Collection('organizations');
+
 
 Organizations.allow({
     insert: function(userId, doc){
@@ -35,6 +35,14 @@ OrganizationSchema = new SimpleSchema ({
         "members.$": Object,
         "members.$.name": String,
         "members.$.role": String,
+          inOrganization: {
+            type: Boolean,
+            defaultValue: true,
+          
+            autoform: {
+                type: 'hidden'
+            }
+      },
        
     createdAt: {
         type: Date,
@@ -53,3 +61,4 @@ OrganizationSchema = new SimpleSchema ({
 
 
 Organizations.attachSchema(OrganizationSchema);
+
