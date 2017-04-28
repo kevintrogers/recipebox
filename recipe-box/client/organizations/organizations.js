@@ -1,3 +1,6 @@
+
+
+
 Template.Organizations.onCreated(function() {
   this.autorun(() => {
     this.subscribe('organizations');
@@ -5,7 +8,7 @@ Template.Organizations.onCreated(function() {
 });
 
 Template.Organizations.helpers({
-    recipes: () => {
+    organizations()  {
         return Organizations.find({});
     }
 });
@@ -16,3 +19,4 @@ Template.Organizations.events({
         Session.set('newOrganization', true);
       }
 });
+
