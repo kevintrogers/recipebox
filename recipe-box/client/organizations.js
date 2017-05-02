@@ -17,7 +17,14 @@ Template.Organizations.helpers({
 Template.Organizations.events({
       'click .btn-organization': () => {
         Session.set('newOrganization', true);
+      },
+      'click .btn-join': () => {
+        Session.set('joinOrganization', true);
+      },
+      'click .btn-deny': () => {
+        Session.set('leaveOrganization', true);
       }
+      
 });
 
 Template.NewOrganization.helpers({
