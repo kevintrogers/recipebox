@@ -9,7 +9,7 @@
     {{/if}}
     <section class='organization-list'>
             {{#if Template.subscriptionsReady}}
-            {{#each organizations}}
+            {{#each organizationList}}
                 {{> OrganizationItem}}
             {{/each}}
         {{else}}

@@ -7,9 +7,7 @@ Meteor.publish('singleRecipe', function(id) {
     return Recipes.find({_id: id})
 });
 
-Meteor.publish('organizations', function() {
-        return Organizations.find({})
-});
+
 
 if (Meteor.isServer) {
   // This code only runs on the server
@@ -17,5 +15,8 @@ if (Meteor.isServer) {
     return ShoppingItems.find();
   });
 
+  Meteor.publish('organizations', function () {
+    return Organizations.find();
+  });
 }
  

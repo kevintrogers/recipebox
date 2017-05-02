@@ -1,29 +1,22 @@
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-Organizations = new Meteor.Collection('organizations');
-
+Organizations = new Mongo.Collection('organizations');
 
 Organizations.allow({
-    insert: function(userId, doc){
+    insert: function(userId){
+        return !!userId;
+    },
+    update: function(userId, doc){
         return !!userId;
     }
 });
-
 
 
 OrganizationSchema = new SimpleSchema ({
     organization: {
         label: "Organization Name",
         type: String
-    },
-    id: {
-        label: "ID",
-        type: String,
-        autoform: {
-            type: "hidden"
-        }
-        
     },
     members: {
         type: Array
@@ -52,9 +45,13 @@ OrganizationSchema = new SimpleSchema ({
     }
 });
 
+Meteor.methods({
+    deleteOrganizations: function(id) {
+        Organizations.remove(id);
+    }
+});
 
-
-
+SimpleSchema.debug = true;
 
 Organizations.attachSchema(OrganizationSchema);
 

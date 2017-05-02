@@ -2,14 +2,14 @@
      <article class='organization'>
         <h3>{{name}}</h3>
         {{#if editMode}}
-            {{>quickForm collection="Organizations" doc=this id=updateOrganizationId type="insert" autosave=true}}
+            {{>quickForm collection="Organizations" id=updateOrganizationId type="insert" autosave=true}}
         {{else}}
                 <p>{{desc}}</p>
-        <p>{{#each organizations}}
-            <h5 class='organization'>{{name}}</h5><br>
+        <p>{{#each organizationList}}
+            <h5 class='organization'>{{organization}}</h5><br>
             <ul class='member-list>'>
             
-            <li>{{member}}</li>
+            <li>{{itemOne}}</li>
             
             </ul>
             {{/each}}
@@ -18,9 +18,9 @@
         
  
             {{#if inMenu}}
-                <button class='btn-deny toggle-menu'>Remove From Menu</button>
+                <button class='btn-deny toggle-menu'>Leave Organization</button>
                 {{else}}
-                <button class='btn-primary toggle-menu'>Add To Menu</button>
+                <button class='btn-primary toggle-menu'>Join Organization</button>
             {{/if}}
         {{/if}}
 

@@ -4,6 +4,7 @@ SimpleSchema.extendOptions(['autoform']);
 Recipes = new Mongo.Collection('recipes');
 ShoppingItems = new Mongo.Collection('shoppingList');
 
+
 Recipes.allow({
     insert: function(userId, doc){
         return !!userId;
@@ -17,8 +18,12 @@ Recipes.allow({
 ShoppingItems.allow({
     insert: function(userId){
         return !!userId;
+    },
+    update: function(userId, doc){
+        return !!userId;
     }
 });
+
 
 IngredientSchema = new SimpleSchema ({
     name: {
@@ -98,6 +103,8 @@ RecipeSchema = new SimpleSchema({
     }
 });
 
+
+
 Meteor.methods({
     toggleMenuItem: function(id, currentMenuState){
         Recipes.update(id, {
@@ -112,8 +119,9 @@ Meteor.methods({
     },
     deleteItems: function(id) {
         ShoppingItems.remove(id);
-    }
+    },
 });
+
 
 Recipes.attachSchema(RecipeSchema);
 ShoppingItems.attachSchema(IngredientSchema);

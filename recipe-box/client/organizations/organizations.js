@@ -1,22 +1,24 @@
-
-
-
-Template.Organizations.onCreated(function() {
-  this.autorun(() => {
-    this.subscribe('organizations');
-  });
+Template.Organizations.onCreated(function(){
+    this.editMode = new ReactiveVar(false);
 });
 
 Template.Organizations.helpers({
-    organizations()  {
-        return Organizations.find({});
+    updateOrganizationsId: function() {
+        return this._id;
+    },
+    editMode: function() {
+        return Template.instance().editMode.get();
     }
 });
 
-
 Template.Organizations.events({
-      'click .btn-organization': () => {
-        Session.set('newOrganization', true);
-      }
+    'click.toggle-menu': function() {
+        Meteor.call('toggleMenuItem', this._id, this.inMenu);
+    },
+    'click .fa-trash' : function () {
+        Meteor.call ('deleteOrganizations', this._id);
+    },
+    'click .fa-pencil' : function (event, template) {
+        template.editMode.set(!template.editMode.get());
+    }
 });
-

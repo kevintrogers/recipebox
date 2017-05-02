@@ -25,7 +25,7 @@ Template.ShoppingList.helpers({
 });
 
 Template.OtherItems.helpers({
-    shoppingList: () => {
+    otherItems: () => {
  
       var listItems = ShoppingItems.find({});
 
