@@ -1,3 +1,4 @@
+Meteor.subscribe('Recipes');
 Template.RecipeSingle.onCreated(function() {
   this.autorun(() => {
     var id = FlowRouter.getParam('id');
