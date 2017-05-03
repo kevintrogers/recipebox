@@ -22,3 +22,12 @@ Template.Organizations.events({
         template.editMode.set(!template.editMode.get());
     }
 });
+
+Template.NewOrganization.helpers({
+    organizationList: () => {
+ 
+      var organizationItems = Organizations.find({});
+
+        return organizationItems;
+    }
+});

@@ -8,14 +8,21 @@
     <button class='btn btn-deny'>Leave an Organization</button>
     {{/if}}
     <section class='organization-list'>
+        <ul>
             {{#if Template.subscriptionsReady}}
+            
             {{#each organizationList}}
-                {{> OrganizationItem}}
+            {{organization}}
+                {{#each members}}
+                <li>
+                    {{name}}--{{role}}
+                </li>
+                {{/each}}
             {{/each}}
         {{else}}
             <p>Loading...</p>
         {{/if}}
-    
+    </ul>
   </section>  
     
 </template>

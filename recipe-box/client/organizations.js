@@ -27,11 +27,3 @@ Template.Organizations.events({
       
 });
 
-Template.NewOrganization.helpers({
-    organizationList: () => {
- 
-      var organizationItems = Organizations.find({});
-
-        return organizationItems;
-    }
-});

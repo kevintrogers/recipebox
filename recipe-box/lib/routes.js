@@ -57,6 +57,15 @@ action() {
     
     }
 });
+
+FlowRouter.route('/single-recipe', {
+name: 'singleRecipe',
+action() {
+    BlazeLayout.render('MainLayout', {main: 'RecipeSingle'});
+    
+    }
+});
+    
     
 
 FlowRouter.route('/organizations', {
