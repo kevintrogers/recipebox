@@ -2,10 +2,13 @@
     <h2>Leave an Organization</h2>
     <div class='list-container'>
         <ul>
-    {{#each organizationItems}}
+    {{#each organizations}}
     <li>
     {{organization}}
     <button  class='btn deny-btn'>Leave</button>
+    {{#each members}}
+    <h5>{{name}}--{{role}}</h5>
+    {{/each}}
     </li>
     {{/each}}
     </ul>
