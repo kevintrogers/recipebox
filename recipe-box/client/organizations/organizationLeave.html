@@ -1,10 +1,12 @@
 <template name='OrganizationLeave'>
+    <i class='fa fa-close'></i>
     <h2>Leave an Organization</h2>
     <div class='list-container'>
         <ul>
     {{#each organizations}}
+    <h4>{{organization}}</h4>
     <li>
-    {{organization}}
+    
     <button  class='btn deny-btn'>Leave</button>
     {{#each members}}
     <h5>{{name}}--{{role}}</h5>

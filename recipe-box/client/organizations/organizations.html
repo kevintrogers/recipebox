@@ -3,19 +3,21 @@
     {{#if $.Session.get 'newOrganization'}}
             {{> NewOrganization }}
     {{else}}
-    {{#if $.Session.get 'joinOrganization'}}
+        {{#if $.Session.get 'joinOrganization'}}
             {{> OrganizationJoin }}
+            
             {{else}}
     
               {{#if $.Session.get 'leaveOrganization'}}
             {{> OrganizationLeave }}
-            {{/if}}
-           {{/if}}
+                  {{/if}}
+        {{/if}}
+    {{/if}}          
+           
     <button class='btn btn-organization btn-primary'>Add an Organization</button>
     <button class='btn btn-join'>Join an Organization</button>
     <button class='btn btn-deny'>Leave an Organization</button>
-    
-    {{/if}}
+
         
     <section class='organization-list'>
         <ul>
