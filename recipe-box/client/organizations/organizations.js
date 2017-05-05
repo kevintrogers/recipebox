@@ -13,7 +13,7 @@ Template.Organizations.helpers({
 
 Template.Organizations.events({
     'click.toggle-menu': function() {
-        Meteor.call('toggleMenuItem', this._id, this.inMenu);
+        Meteor.call('togglerganizationMembership', this._id, this.inOrganization);
     },
     'click .fa-trash' : function () {
         Meteor.call ('deleteOrganizations', this._id);
