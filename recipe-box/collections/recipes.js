@@ -80,6 +80,12 @@ RecipeSchema = new SimpleSchema({
                 type: 'hidden'
             }
       },
+        directions: {
+            type: Array
+        },
+        "directions.$": Object,
+        "directions.$.step": String,
+        
     author: {
         type: String,
         label: "Author",
