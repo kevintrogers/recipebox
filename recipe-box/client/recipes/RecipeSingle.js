@@ -1,8 +1,9 @@
 Meteor.subscribe('Recipes');
+
 Template.RecipeSingle.onCreated(function() {
   this.autorun(() => {
     var id = FlowRouter.getParam('id');
-    this.subscribe('RecipeSingle', id);
+    this.subscribe('singleRecipe', id);
   });
 });
 

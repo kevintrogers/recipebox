@@ -1,11 +1,12 @@
 <template name='RecipeSingle'>
-    <div class='recipe'>
-    <h2>{{name}}</h2>
-    <h4>{{desc}}</h4>
- {{#each recipes}}
-        {{> Recipe}}
-       {{/each}} 
+     {{ #if Template.subscriptionsReady }}
+<h1>{{recipe.name}}</h1>
 
-    </div>
+ 
+        
+{{else}}
+loading....
+{{/if}}
+
     
 </template>
