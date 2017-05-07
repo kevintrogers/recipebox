@@ -12,9 +12,9 @@ Template.Organizations.helpers({
 });
 
 Template.Organizations.events({
-    'click.toggle-menu': function() {
-        Meteor.call('togglerganizationMembership', this._id, this.inOrganization);
-    },
+    // 'click.toggle-organization': function() {
+    //     Meteor.call('toggleOrganizationMembership', this._id, this.inOrganization);
+    // },
     'click .fa-trash' : function () {
         Meteor.call ('deleteOrganizations', this._id);
     },
@@ -23,11 +23,3 @@ Template.Organizations.events({
     }
 });
 
-Template.NewOrganization.helpers({
-    organizationList: () => {
- 
-      var organizationItems = Organizations.find({});
-
-        return organizationItems;
-    }
-});

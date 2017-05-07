@@ -2,17 +2,20 @@
     <i class='fa fa-close'></i>
     <h2>Leave an Organization</h2>
     <div class='list-container'>
+        <section class='organization-list'>
         <ul>
-    {{#each organizations}}
-    <h4>{{organization}}</h4>
-    <li>
-    
-    <button  class='btn deny-btn'>Leave</button>
-    {{#each members}}
-    <h5>{{name}}--{{role}}</h5>
-    {{/each}}
-    </li>
-    {{/each}}
-    </ul>
+            {{#if Template.subscriptionsReady}}
+            
+            {{#each organizationList}}
+            <li>
+            {{organization}}
+            <button class='btn toggle-organization'>Join</button>
+            </li>
+            {{/each}}
+        {{else}}
+            <p>Loading...</p>
+        {{/if}}
+            </ul>
+        </section>
     </div>
 </template>
