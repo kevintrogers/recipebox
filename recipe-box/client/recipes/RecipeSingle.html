@@ -1,9 +1,26 @@
 <template name='RecipeSingle'>
      {{ #if Template.subscriptionsReady }}
 <h1>{{recipe.name}}</h1>
+<h3>Description</h3>
+{{recipe.desc}}
+<h3>Ingredients</h3>
+<ul>
+{{#each recipe.ingredients}}
+<li>
+{{name}}--{{amount}}
+</li>
 
- 
-        
+{{/each}}
+</ul>
+<h3>Directions</h3>
+<ol>
+{{#each recipe.directions}}
+<li>
+    {{step}}
+</li>
+
+ {{/each}}
+ </ol>       
 {{else}}
 loading....
 {{/if}}
