@@ -8,7 +8,10 @@ Template.OrganizationJoin.onCreated(function() {
 Template.OrganizationJoin.events ({
     'click .fa-close': function () {
         Session.set('joinOrganization', false);
-    }
+    }// ,
+    // 'click .toggle-organization': function () {
+      
+    // }
 });
 
 Template.OrganizationJoin.helpers({

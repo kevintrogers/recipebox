@@ -9,8 +9,17 @@
             {{#each organizationList}}
             <li>
             {{organization}}
-            <button class='btn toggle-organization'>Join</button>
+            {{#if joinMode}}
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                {{#autoForm collection="Organizations" doc=this id="updateOrganizationId" type="update" scope="employees.0.addresses"}}
+                {{> afQuickField name='members.$.name' }}
+                {{/autoForm}}
+
             </li>
+            {{else}}
+                <button class='btn toggle-organization'>Join</button>
+            {{/if}}
             {{/each}}
         {{else}}
             <p>Loading...</p>

@@ -24,7 +24,6 @@ OrganizationSchema = new SimpleSchema ({
         "members.$": Object,
         "members.$.name": String,
         "members.$.role": String,
-  
           inOrganization: {
             type: Boolean,
             defaultValue: true,
