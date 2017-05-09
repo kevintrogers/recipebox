@@ -8,10 +8,12 @@ Template.OrganizationJoin.onCreated(function() {
 Template.OrganizationJoin.events ({
     'click .fa-close': function () {
         Session.set('joinOrganization', false);
-    }// ,
-    // 'click .toggle-organization': function () {
-      
-    // }
+        Session.set('submitMembership', false);
+    },
+    'click .toggle-organization': function () {
+      Session.set('submitMembership', true);
+      var elementPosition = $(this).index();
+    }
 });
 
 Template.OrganizationJoin.helpers({
@@ -20,5 +22,6 @@ Template.OrganizationJoin.helpers({
       var organizationItems = Organizations.find({});
 
         return organizationItems;
-    }
+    },
+
 });
