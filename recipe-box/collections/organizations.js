@@ -24,15 +24,14 @@ OrganizationSchema = new SimpleSchema ({
         "members.$": Object,
         "members.$.name": String,
         "members.$.role": String,
-          inOrganization: {
-            type: Boolean,
-            defaultValue: true,
-          
+        "members.$.memberNum": String,
             autoform: {
-                type: 'hidden'
-            }
-      },
-       
+                type: "hidden"
+            },
+            autoValue: function() {
+                return this.userId;
+            },
+     
     createdAt: {
         type: Date,
         label: "CreatedAt",
