@@ -1,28 +1,29 @@
 <template name='OrganizationJoin'>
 
     <h2>Join an Organization</h2>
+    <i class='fa fa-close'></i>
        {{#if $.Session.get 'submitMembership'}}
-                        <i class='fa fa-close'></i>
-                {{#autoForm collection="Organizations" doc=this id="updateOrganizationId" type="update" scope="organizations.{{elementPosition}}.members.$.name"}}
+                        
+            {{#autoForm collection="Organizations" doc=this id="withdrawOrganizationId" type="update" scope="organizations.{{elementPosition}}.members.$.name"}}
                 {{> afQuickField name='members.$.name' }}
                 <button type="submit" class="btn btn-primary">Submit</button>
-               {{/autoForm}}
-               {{else}}
+           {{/autoForm}}
+       {{else}}
     <div class='list-container'>
     <section class='organization-list'>
         <ul>
             {{#if Template.subscriptionsReady}}
             
-            {{#each organizationList}}
+                {{#each organizationList}}
             <li>
-            {{organization}}
-            <button class='btn toggle-organization'>Join</button>
+                {{organization}}
+                <button class='btn toggle-organization'>Join</button>
             </li>
- 
-        {{else}}
-            <p>Loading...</p>
-            {{/each}}
-        {{/if}}
+                 {{/each}}
+            {{else}}
+                <p>Loading...</p>
+            
+            {{/if}}
     </ul>
             
                
