@@ -25,8 +25,6 @@ OrganizationSchema = new SimpleSchema ({
         "members.$": Object,
         "members.$.name": String,
          "members.$.memberNum": String,
-
-
     createdAt: {
         type: Date,
         label: "CreatedAt",

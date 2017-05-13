@@ -3,10 +3,10 @@
 
         <i class='fa fa-close'></i>
 
-{{> quickForm collection='Organizations' id='insertOrganizationForm' type='insert' class='new-recipe-form'}}
- 
-
-       
+            {{#autoForm collection="Organizations" doc=this id="withdrawOrganizationId" type="update" scope="organizations.{{elementPosition}}.members.$.name"}}
+                {{> afQuickField name='organization' }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+           {{/autoForm}}  
  </div> 
     
 </template>
