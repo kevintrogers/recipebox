@@ -6,6 +6,7 @@
                         
             {{#autoForm collection="Organizations" doc=this id="withdrawOrganizationId" type="update" scope="organizations.{{elementPosition}}.members.$.name"}}
                 {{> afQuickField name='members.$.name' }}
+                {{> afQuickField name='members.$.memberNum' }}
                 <button type="submit" class="btn btn-primary">Submit</button>
            {{/autoForm}}
        {{else}}

@@ -2,6 +2,7 @@ import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
 Organizations = new Mongo.Collection('organizations');
+Members = new Mongo.Collection('members');
 
 Organizations.allow({
     insert: function(userId){
@@ -23,15 +24,9 @@ OrganizationSchema = new SimpleSchema ({
     },
         "members.$": Object,
         "members.$.name": String,
-        "members.$.role": String,
-        "members.$.memberNum": String,
-            autoform: {
-                type: "hidden"
-            },
-            autoValue: function() {
-                return this.userId;
-            },
-     
+         "members.$.memberNum": String,
+
+
     createdAt: {
         type: Date,
         label: "CreatedAt",
@@ -43,6 +38,8 @@ OrganizationSchema = new SimpleSchema ({
         }
     }
 });
+
+
 
 Meteor.methods({
     deleteOrganizations: function(id) {
