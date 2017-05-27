@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Goblin+One');
+$sign-font: 'Goblin One';
+$base-color: lightbrown;
+$background-color: #fafafa;
+.banner {
+height:20em;
+  background: darkgreen;
+}
+
+.sign-border {
+  -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
+  clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
+  background: orange;
+  height: 18em;
+  width: 25em;
+  top:-4em;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.sign {
+  -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
+  clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
+  position: relative;
+  top: .5em;
+  background: yellow;
+  height: 17em;
+  width: 24em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sign-top-text,
+.sign-bottom-text {
+  position: relative;
+  font-family: 'Faster One';
+  color: lavender;
+  font-style: italic;
+    font-size: 1.25em;
+}
+
+.sign-top-text {
+    left: 45%;
+}
+
+.sign-bottom-text {
+     left: 45%;
+      top: -4.5em;
+}
+
+.sign-main-text {
+  background: transparent;
+  padding: 1.75em .5em;
+  font-family: $sign-font;
+  color: red;
+}
+
+.sign-sub-header {
+  position: relative;
+}
+
+.side-navigation-panel {
+  width: auto;
+  height: 100vh;
+}
+
+
+.side-navigation {
+  display: block;
+  background: darkgreen;
+  height: 100%;
+  margin-top: -1em;  
+}
+
+
+.side-navigation li {
+  float:none;
+}
+
+ul {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  text-align: center;
+}
+.main-content{
+  background:#fff;
+}
+
+.recipe-card {
+  
+  
+}
+.in-menu {
+  border-top: 4px solid green;
+}
+.not-in-menu {
+  border-top: 4px solid yellow;
+}
+
+.ingredient-list-card li {
+  display: block;
+}
+
+.ingredient-name-card {
+  margin-left: 1em;
+}
+
+.ingredient-amount-card {
+  float: right;
+  margin-right: 1em;
+}
+
+.details-btn {
+  margin: .25em 25%;
+}

@@ -21,7 +21,7 @@ FlowRouter.route('/', {
         if (Meteor.userId()) {
             FlowRouter.go('recipe-book');
         }
-        GAnalytics.pageview();
+        // GAnalytics.pageview();
         BlazeLayout.render('HomeLayout');
     } 
 });
@@ -29,7 +29,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/recipe-book', {
     name: 'recipe-book',
     action() {
-        GAnalytics.pageview();
+        // GAnalytics.pageview();
         BlazeLayout.render('MainLayout', {main: 'Recipes'});
     } 
 });
@@ -37,7 +37,7 @@ FlowRouter.route('/recipe-book', {
 FlowRouter.route('/recipe/:id', {
     name: 'recipe',
     action() {
-        GAnalytics.pageview();
+        // GAnalytics.pageview();
         BlazeLayout.render('MainLayout', {main: 'RecipeSingle'});
     } 
 });
