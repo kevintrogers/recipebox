@@ -1,25 +1,27 @@
 <template name='Recipe'>
-    <article class='recipe{{#if inMenu}}in-menu{{/if}}'>
-        <h3>{{name}}</h3>
+    <div class='recipe{{#if inMenu}}in-menu{{/if}} panel panel-info col-xs-10 col-xs-offset-1'>
+         <div class="panel-title">{{name}}</div>
+  <div class="panel-body">
+        <h3></h3>
         {{#if editMode}}
             {{>quickForm collection="Recipes" doc=this id=updateRecipeId type="update" autosave=true}}
         {{else}}
                 <p>{{desc}}</p>
-        <p>{{#each ingredients}}
-            <span class='ingredient'>{{name}} - {{amount}}</span><br>
-            {{/each}}
-            </p>
+        <!--<p>{{#each ingredients}}-->
+        <!--    <span class='ingredient'>{{name}} - {{amount}}</span><br>-->
+        <!--    {{/each}}-->
+        <!--    </p>-->
             <a href='/recipe/{{_id}}'>View Details</a>
  
             {{#if inMenu}}
-                <button class='btn-deny toggle-menu'>Remove From Menu</button>
+                <button class='btn btn-warning toggle-menu'>Remove From Menu</button>
                 {{else}}
-                <button class='btn-primary toggle-menu'>Add To Menu</button>
+                <button class='btn btn-primary toggle-menu'>Add To Menu</button>
             {{/if}}
         {{/if}}
 
         <i class='fa fa-pencil'></i>
         <i class='fa fa-trash'></i>
-
-    </article>
+        </div>
+    </div>
 </template>
