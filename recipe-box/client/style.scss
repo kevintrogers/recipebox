@@ -100,14 +100,18 @@ button.new-recipe {
   margin-top:1em;
   margin-bottom: 1em;
 }
-
-.recipein-menu {
+.panel {
+  border-color: #f0f0f0;
+}
+.recipein-menu, .single-recipe-panel {
   border-top: 4px solid green;
 }
 .recipe {
   border-top: 4px solid yellow;
 }
-
+.single-recipe-panel {
+  margin-top: 1em;
+}
 .ingredient-list-card li {
   display: block;
 }

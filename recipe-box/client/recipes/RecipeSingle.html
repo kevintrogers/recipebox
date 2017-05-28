@@ -1,9 +1,13 @@
 <template name='RecipeSingle'>
      {{ #if Template.subscriptionsReady }}
-<h1>{{recipe.name}}</h1>
-<h3>Description</h3>
+     <div class='panel  single-recipe-panel col-xs-10 col-xs-offset-1'>
+         <div class='panel-heading'>
+<h3 class='panel-title'>{{recipe.name}}</h3>
+</div>
+<div class='panel-body'>
+<h4>Description</h4>
 {{recipe.desc}}
-<h3>Ingredients</h3>
+<h4>Ingredients</h4>
 <ul>
 {{#each recipe.ingredients}}
 <li>
@@ -12,7 +16,7 @@
 
 {{/each}}
 </ul>
-<h3>Directions</h3>
+<h4>Directions</h4>
 <ol>
 {{#each recipe.directions}}
 <li>
@@ -20,7 +24,9 @@
 </li>
 
  {{/each}}
- </ol>       
+ </ol>
+ </div>
+ </div>
 {{else}}
 loading....
 {{/if}}
