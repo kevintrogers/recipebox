@@ -10,6 +10,7 @@ $background-color: #fafafa;
   margin-top: -20px;
 }
 
+
 .sign-border {
   -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
   clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
@@ -46,10 +47,9 @@ $background-color: #fafafa;
   color: red;
 }
 
-.sign-sub-header {
-  position: relative;
+h1{
+  text-align:center;
 }
-
 .small-navigation {
     display: inline;
 }
