@@ -29,7 +29,6 @@ aldeed:autoform
 accounts-ui
 accounts-password
 
-
 zimme:active-route
 gwendall:auth-client-callbacks
 
@@ -38,9 +37,6 @@ meteortoys:allthings
 
 check
 reactive-var@1.0.11
-
-
-
 
 seba:minifiers-autoprefixer
 fourseven:scss
