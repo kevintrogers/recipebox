@@ -2,18 +2,18 @@
 $sign-font: 'Goblin One';
 $base-color: lightbrown;
 $background-color: #fafafa;
+
 .banner {
-height:20em;
   background: darkgreen;
+  margin-top: -20px;
 }
 
 .sign-border {
   -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
   clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
   background: orange;
-  height: 18em;
+  height: 13em;
   width: 25em;
-  top:-4em;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -25,7 +25,7 @@ height:20em;
   position: relative;
   top: .5em;
   background: yellow;
-  height: 17em;
+  height: 12em;
   width: 24em;
   margin-left: auto;
   margin-right: auto;
@@ -33,12 +33,13 @@ height:20em;
 
 .login a{
   color: #fff;
+  margin: .5em;
 }
 
 .sign-main-text {
   background: transparent;
   font-size: 3.45em;
-  padding: 1.75em .5em;
+  padding: 1.15em .5em;
   font-family: $sign-font;
   color: red;
 }
