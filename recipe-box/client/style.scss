@@ -53,11 +53,28 @@ $background-color: #fafafa;
 .small-navigation {
     display: inline;
 }
+.small-navigation ul {
+   margin-left: 33.3333%;
+}
 
 .small-navigation li {
     display: inline-block;
+    background: darkgreen;
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+        margin-top: .5em;
+    
 }
-
+.small-navigation li a {
+  color:#fff;
+  font-size: 2em;
+  padding-left: .5em;
+  text-align: center;
+}
+.small-navigation li a i{
+  padding-top: .5em;
+}
 .side-navigation {
   display: block;
   background: darkgreen;
