@@ -1,42 +1,43 @@
 <template name='Organizations'>
-    <h3>Your Organizations</h3>
-    {{#if $.Session.get 'newOrganization'}}
-            {{> NewOrganization }}
-    {{else}}
-        {{#if $.Session.get 'joinOrganization'}}
-            
-            {{> OrganizationJoin }}
-            {{else}}
-            
-    
-              {{#if $.Session.get 'leaveOrganization'}}
-            {{> OrganizationLeave }}
-            {{else}}
-         
-           
-    <button class='btn btn-organization btn-primary'>Add an Organization</button>
-    <button class='btn btn-join'>Join an Organization</button>
-    <button class='btn btn-deny'>Leave an Organization</button>
-
-    <section class='organization-list'>
-        <ul>
+    <div class='panel col-xs-10 col-xs-offset-1'>
+        <div class='btn-group col-xs-10 col-xs-offset-1'>
+            <button class='btn btn-organization btn-primary'>Add an Organization</button>
+            <button class='btn btn-success'>Join an Organization</button>
+            <button class='btn btn-danger'>Leave an Organization</button>
+        </div>
+        <div class='panel-heading'>
+            <h3 class='organization-panel-title'>Current Organizations</h3>
+        </div>
+            <div class='panel-body'>
+            <ul>
             {{#if Template.subscriptionsReady}}
             
-            {{#each organizations}}
-            {{organization}}
-                {{#each members}}
-                <li>
-                   {{name}}--{{memberNum}}
-                </li>
+                {{#each organizations}}
+                {{organization}}
+                    {{#each members}}
+                    <li>
+                       {{name}}--{{memberNum}}
+                    </li>
+                    {{/each}}
                 {{/each}}
-            {{/each}}
-        {{else}}
-            <p>Loading...</p>
-        {{/if}}
-    </ul>
-  </section> 
-  {{/if}}
-  {{/if}}
-  {{/if}}
-    
+            {{else}}
+                <p>Loading...</p>
+            {{/if}}
+            </ul>
+            {{#if $.Session.get 'newOrganization'}}
+                    {{> NewOrganization }}
+            {{else}}
+                {{#if $.Session.get 'joinOrganization'}}
+                    
+                    {{> OrganizationJoin }}
+                    {{else}}
+               
+                    {{#if $.Session.get 'leaveOrganization'}}
+                        {{> OrganizationLeave }}
+        
+                    {{/if}}
+              {{/if}}
+          {{/if}}
+        </div>
+    </div>
 </template>
