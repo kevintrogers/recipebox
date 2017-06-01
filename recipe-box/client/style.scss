@@ -94,6 +94,8 @@ button.new-recipe {
 .panel {
   border-color: #f0f0f0;
   border-top: 4px solid orange;
+  margin-top: 1.5em;
+  position: relative;
 }
 .panel h3, h4 {
   font-style: italic;
@@ -103,7 +105,9 @@ button.new-recipe {
   text-align:center;
 }
 .btn-group {
+  position: relative;
   text-align: center;
+  padding:1.5em;
 }
 .recipein-menu, .single-recipe-panel {
   border-top: 4px solid green;
