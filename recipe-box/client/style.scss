@@ -75,21 +75,6 @@ h1{
 .small-navigation li a i{
   padding-top: .5em;
 }
-.side-navigation {
-  display: block;
-  background: darkgreen;
-  height: 100%;
-  margin-top: -1em;  
-}
-
-
-.side-navigation li {
-  float:none;
-  
-}
-.side-navigation li a{
-  color: #fff;
-}
 
 ul {
   list-style: none;
@@ -151,7 +136,35 @@ button.new-recipe {
 @media (min-width: 768px) {  }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) { }
+@media (min-width: 992px) {
+  .login {
+    padding: 2em;
+    font-size: 1.25em;
+}
+  .side-navigation {
+  display: block;
+  background: darkgreen;
+  height: 100vh;
+  
+}
+.side-navigation ul {
+  position: fixed;
+}
+
+.side-navigation li {
+  float:none;
+  font-size: 1.25em;
+  padding:.75em;
+  
+}
+.side-navigation li a{
+  color: #fff;
+}
+.side-navigation li a i{
+  padding: .5em;
+}
+  
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { }
