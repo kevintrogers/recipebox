@@ -145,7 +145,7 @@ button.new-recipe {
   display: block;
   background: darkgreen;
   height: 100vh;
-  
+  margin-top: -1.5em;
 }
 .side-navigation ul {
   position: fixed;
@@ -162,6 +162,9 @@ button.new-recipe {
 }
 .side-navigation li a i{
   padding: .5em;
+}
+.add-item{
+  padding-top: 1.5em;
 }
   
 }
