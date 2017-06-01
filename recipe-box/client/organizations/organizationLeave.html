@@ -1,6 +1,9 @@
 <template name='OrganizationLeave'>
     <i class='fa fa-close'></i>
-    <h2>Leave an Organization</h2>
+    <div class='panel'>
+        <div class='panel-heading'>
+    <h3 class='panel-title'>Leave an Organization</h3>
+    </div>
     {{#if $.Session.get 'withdrawMembership'}}
         {{#autoForm collection="Organizations" doc=this id="updateOrganizationId" type="update" scope="organizations.{{elementPosition}}.members.$.name"}}
             {{> afQuickField name='members.$.name' }}
@@ -9,20 +12,21 @@
        {{else}}
             <div class='list-container'>
                 <section class='organization-list'>
-                <ul>
+                <ul class='list-group'>
                     {{#if Template.subscriptionsReady}}
                     
                         {{#each organizationList}}
-                    <li>
+                    <li class='list-group-item'>
+                        <button class='btn btn-danger toggle-organization'>Leave</button>
                         {{organization}}
-                        <button class='btn toggle-organization'>Leave</button>
                     </li>
                         {{/each}}
-                    {{else}}
-                        <p>Loading...</p>
+                    <!--{{else}}-->
+                    <!--    <p>Loading...</p>-->
                     {{/if}}
                     </ul>
                 </section>
             </div>
     {{/if}}
+    </div>
 </template>

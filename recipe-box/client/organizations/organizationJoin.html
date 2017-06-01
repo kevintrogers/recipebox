@@ -1,6 +1,8 @@
 <template name='OrganizationJoin'>
-
-    <h2>Join an Organization</h2>
+<div class='panel'>
+    <div class='panel-heading'>
+    <h3 class='panel-title'>Join an Organization</h3>
+    </div>
     <i class='fa fa-close'></i>
        {{#if $.Session.get 'submitMembership'}}
                         
@@ -8,17 +10,17 @@
        {{else}}
     <div class='list-container'>
     <section class='organization-list'>
-        <ul>
+        <ul class='list-group'>
             {{#if Template.subscriptionsReady}}
             
                 {{#each organizationList}}
-            <li>
-                {{organization}}
+            <li class='list-group-item'>
                 <button class='btn btn-success toggle-organization'>Join</button>
+                {{organization}}
             </li>
                  {{/each}}
-            {{else}}
-                <p>Loading...</p>
+            <!--{{else}}-->
+            <!--    <p>Loading...</p>-->
             
             {{/if}}
     </ul>
@@ -27,4 +29,5 @@
     </section>
     </div>
     {{/if}}
+    </div>
 </template>
