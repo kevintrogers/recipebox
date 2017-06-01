@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Faster+One|Goblin+One|Alegreya+Sans+SC|Fjalla+One|Hind|Hind+Guntur|Istok+Web|Julius+Sans+One|Montserrat|Montserrat+Alternates|Open+Sans|Open+Sans+Condensed:300|Pontano+Sans|Roboto|Roboto+Condensed|Rubik|Ubuntu+Condensed|Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Goblin+One|Varela+Round');
 $sign-font: 'Goblin One';
 $base-color: lightbrown;
 $background-color: #fafafa;
@@ -10,7 +10,9 @@ $background-color: #fafafa;
   margin-top: -20px;
 }
 
-
+.main-layout {
+  font-family: 'Varela Round';
+}
 .sign-border {
   -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
   clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
