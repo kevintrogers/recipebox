@@ -1,12 +1,15 @@
 <template name='NewOrganization'>
-    <div class='new-organization-container'>
-
+    <div class='panel col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0'>
+        <div class='panel-heading'>
+            <h3 class='panel-title'>Add and Organization</h3>
+        </div>
         <i class='fa fa-close'></i>
-
+        <div class='panel-body'>
             {{#autoForm collection="Organizations" doc=this id="withdrawOrganizationId" type="update" scope="organizations.{{elementPosition}}.members.$.name"}}
                 {{> afQuickField name='organization' }}
                 <button type="submit" class="btn btn-primary">Submit</button>
-           {{/autoForm}}  
+           {{/autoForm}}
+       </div>
  </div> 
     
 </template>
