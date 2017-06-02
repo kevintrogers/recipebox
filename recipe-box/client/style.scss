@@ -93,11 +93,18 @@ button.new-recipe {
   margin-top:1em;
   margin-bottom: 1em;
 }
+.fa-close {
+  float:right;
+  margin-right:1em;
+}
 .panel {
   border-color: #f0f0f0;
   border-top: 4px solid orange;
   margin-top: 1.5em;
   position: relative;
+}
+.panel-title {
+  float: left;
 }
 .panel h3, h4 {
   font-style: italic;
@@ -119,6 +126,9 @@ button.new-recipe {
 }
 .single-recipe-panel {
   margin-top: 1em;
+}
+.list-group {
+  clear:both;
 }
 .ingredient-list-card li {
   display: block;

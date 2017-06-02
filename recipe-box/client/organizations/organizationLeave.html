@@ -1,8 +1,10 @@
 <template name='OrganizationLeave'>
-    <i class='fa fa-close'></i>
+    
     <div class='panel'>
+        
         <div class='panel-heading'>
     <h3 class='panel-title'>Leave an Organization</h3>
+    <i class='fa fa-close'></i>
     </div>
     {{#if $.Session.get 'withdrawMembership'}}
         {{#autoForm collection="Organizations" doc=this id="updateOrganizationId" type="update" scope="organizations.{{elementPosition}}.members.$.name"}}
