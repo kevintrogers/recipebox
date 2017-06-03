@@ -8,21 +8,7 @@
         <div class='panel-heading'>
         </div>
             <div class='panel-body'>
-            <ul>
-            {{#if Template.subscriptionsReady}}
-            
-                {{#each organizations}}
-                {{organization}}
-                    {{#each members}}
-                    <li>
-                       {{name}}--{{memberNum}}
-                    </li>
-                    {{/each}}
-                {{/each}}
-            <!--{{else}}-->
-            <!--    <p>Loading...</p>-->
-            {{/if}}
-            </ul>
+
             {{#if $.Session.get 'newOrganization'}}
                     {{> NewOrganization }}
             {{else}}

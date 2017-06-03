@@ -5,7 +5,7 @@
         </div>
         <i class='fa fa-close'></i>
         <div class='panel-body'>
-            {{#autoForm collection="Organizations" doc=this id="withdrawOrganizationId" type="update" scope="organizations.{{elementPosition}}.members.$.name"}}
+            {{#autoForm collection="Organizations" id="addOrganization" type="insert" }}
                 {{> afQuickField name='organization' }}
                 <button type="submit" class="btn btn-primary">Submit</button>
            {{/autoForm}}
