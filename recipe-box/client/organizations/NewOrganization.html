@@ -5,10 +5,11 @@
         </div>
         <i class='fa fa-close'></i>
         <div class='panel-body'>
-            {{#autoForm collection="Organizations" id="addOrganization" type="insert" }}
-                {{> afQuickField name='organization' }}
-                <button type="submit" class="btn btn-primary">Submit</button>
-           {{/autoForm}}
+
+
+            {{> quickForm collection='Organizations' id='insertOrganizationFOrm' type='insert' class='new-organization-form'}}
+
+
        </div>
  </div> 
     

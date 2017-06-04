@@ -1,8 +1,9 @@
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
+
 Organizations = new Mongo.Collection('organizations');
-Members = new Mongo.Collection('members');
+
 
 Organizations.allow({
     insert: function(userId){
