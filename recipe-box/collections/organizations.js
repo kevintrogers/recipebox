@@ -23,14 +23,11 @@ OrganizationSchema = new SimpleSchema ({
     members: {
         type: Array,
         label: "MemberId",
-
                 autoform: {
                 type: "hidden",
-                },
-                autoValue: function() {
-                    return this.userId;
                 }
-        },
+    },
+
 
     createdAt: {
         type: Date,

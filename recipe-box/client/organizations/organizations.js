@@ -1,5 +1,11 @@
+Template.Recipes.onCreated(function() {
+
+});
 Template.Organizations.onCreated(function(){
     this.editMode = new ReactiveVar(false);
+    this.autorun(() => {
+        this.subscribe('organizations');
+  });
 });
 
 Template.Organizations.helpers({
@@ -23,3 +29,11 @@ Template.Organizations.events({
     }
 });
 
+Template.Organizations.helpers({
+    organizationList: () => {
+ 
+      var organizationItems = Organizations.find({});
+
+        return organizationItems;
+    }
+});

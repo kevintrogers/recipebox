@@ -17,5 +17,8 @@ Meteor.publish('singleRecipe', function(id) {
   Meteor.publish('organizations', function tasksPublication() {
     return Organizations.find();
   });
+  Meteor.publish("users", function(){
+  return Meteor.users.find();
+})
 }
  
