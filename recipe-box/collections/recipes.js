@@ -117,7 +117,7 @@ Meteor.methods({
             $set: {
                 inMenu: !currentMenuState
             }
-        })
+        });
         
     },
     deleteRecipe: function(id) {

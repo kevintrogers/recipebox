@@ -20,12 +20,28 @@ OrganizationSchema = new SimpleSchema ({
         label: "Organization Name",
         type: String
     },
-    "members.$.memberId": {
+    admin: {
+        label: "Administrator",
         type: String,
-            autoform: {
+                    autoform: {
                 type: "hidden"
-            }
-         },
+            },
+            autoValue: function() {
+                return this.userId;
+        }
+    },
+    members: {
+        type: Array,
+        optional: true,
+        minCount: 0,
+        autoform: {
+            type: "hidden"
+        },
+    },
+        "members.$": Object,
+        "members.$.name":  String,
+        "members.$.memberId": String,
+
     createdAt: {
         type: Date,
         label: "CreatedAt",
@@ -43,7 +59,8 @@ OrganizationSchema = new SimpleSchema ({
 Meteor.methods({
     deleteOrganizations: function(id) {
         Organizations.remove(id);
-    }
+    },
+    
 });
 
 SimpleSchema.debug = true;
