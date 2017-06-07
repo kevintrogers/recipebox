@@ -26,7 +26,16 @@ Template.Organizations.events({
     },
     'click .fa-pencil' : function (event, template) {
         template.editMode.set(!template.editMode.get());
-    }
+    },
+    // 'click .toggle-organization' : function () {
+    //     var membership = Organizations.findOne({ members: this.userId });
+    //     if (membership) {
+    //         Organizations.members.remove(membership); 
+                       
+    //     } else {
+    //       Organizations.members.insert(membership);
+    //     }
+    // }
 });
 
 Template.Organizations.helpers({
