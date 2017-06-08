@@ -1,6 +1,3 @@
-
-
-
 Template.Organizations.onCreated(function() {
   this.autorun(() => {
     this.subscribe('organizations');
