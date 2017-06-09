@@ -17,20 +17,34 @@ $background-color: #fafafa;
       position: relative;
     left: 33.3333%;
 }
+.sign-border {
+  -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 50% 80%, 10% 70%, 0 30%);
+  clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 50% 80%, 10% 70%, 0 30%);
+  background: orange;
+  height: 13em;
+  width: 25em;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
 
+.sign {
+  -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 50% 80%, 10% 70%, 0 30%);
+  clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 50% 80%, 10% 70%, 0 30%);
+  position: relative;
+  top: .5em;
+  background: yellow;
+  height: 12em;
+  width: 24em;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .login a{
   color: #fff;
   margin: .5em;
 }
 
-.sign-main-text {
-  background: transparent;
-  font-size: 3.45em;
-  padding: 1.15em .5em;
-  font-family: $sign-font;
-  color: red;
-}
 
 h1,h2{
   text-align:center;
