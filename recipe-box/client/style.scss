@@ -13,28 +13,11 @@ $background-color: #fafafa;
 .main-layout, .login, .login-button {
   font-family: 'Varela Round';
 }
-.sign-border {
-  -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
-  clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
-  background: orange;
-  height: 13em;
-  width: 25em;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
+.svg-box {
+      position: relative;
+    left: 33.3333%;
 }
 
-.sign {
-  -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
-  clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 51% 79%, 10% 70%, 0 30%);
-  position: relative;
-  top: .5em;
-  background: yellow;
-  height: 12em;
-  width: 24em;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .login a{
   color: #fff;
