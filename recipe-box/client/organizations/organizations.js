@@ -24,7 +24,14 @@ Template.Organizations.events({
     },
     'click .fa-pencil' : function (event, template) {
         template.editMode.set(!template.editMode.get());
+    },
+    'click . join-organization' : function () {
+        
+    },
+    'click . join-organization' : function () {
+        
     }
+    
 });
 
 Template.Organizations.helpers({
@@ -36,13 +43,13 @@ Template.Organizations.helpers({
     }
 });
 
-// const newOrg = {
-//     name: this.organizations.organization,
-//     orgId:  this.organizations._id
-// };
+const newOrg = {
+    name: this.organizations.organization,
+    orgId:  this.organizations._id
+};
 
-// Meteor.users.update(userId, {
-//   $set: {
-//     orgs: newOrg
-//   }
-// });
+Meteor.users.update(userId, {
+  $set: {
+    orgs: newOrg
+  }
+});
