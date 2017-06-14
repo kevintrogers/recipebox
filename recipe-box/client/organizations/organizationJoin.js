@@ -1,10 +1,3 @@
-Template.OrganizationJoin.onCreated(function() {
-  this.autorun(() => {
-    this.subscribe('organizations');
-  });
-});
-
-
 Template.OrganizationJoin.events ({
     'click .fa-close': function () {
         Session.set('joinOrganization', false);
