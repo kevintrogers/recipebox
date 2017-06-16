@@ -23,11 +23,11 @@ OrganizationSchema = new SimpleSchema ({
     admin: {
         label: "Administrator",
         type: String,
-                    autoform: {
+            autoform: {
                 type: "hidden"
             },
             autoValue: function() {
-                return this.userId;
+                return Meteor.userId;
         }
     },
     members: {
@@ -36,12 +36,23 @@ OrganizationSchema = new SimpleSchema ({
         minCount: 0,
         autoform: {
             type: "hidden"
+                },
+     },
+        // "members.$": {
+        //     type: Object
+        // },
+        // "members.$.name": {
+        //     type: String,
+        //     label: "Name"
+            
+        // },
+        "members.$.memberId": {
+            type: String,
+            label: "Member ID",
+                autoValue: function() {
+                        return this.userId;
+                }
         },
-    },
-        "members.$": Object,
-        "members.$.name":  String,
-        "members.$.memberId": String,
-
     createdAt: {
         type: Date,
         label: "CreatedAt",
@@ -60,6 +71,18 @@ Meteor.methods({
     deleteOrganizations: function(id) {
         Organizations.remove(id);
     },
+//     joinOrganization: function (organization, id) {
+//   Organizations.update ({
+      
+//   },
+//   { $set:{ 
+//           "organization": organization,
+//           "members.$.memberId" : this.userId }
+//   },
+//   {update:true
+//   });
+// }
+        
     
 });
 
