@@ -11,14 +11,6 @@ Template.Organizations.onCreated(function(){
   });
 });
 
-Template.Organizations.helpers({
-    updateOrganizationsId: function() {
-        return this._id;
-    },
-    editMode: function() {
-        return Template.instance().editMode.get();
-    }
-});
 
 Template.Organizations.events({
 
@@ -29,7 +21,7 @@ Template.Organizations.events({
         template.editMode.set(!template.editMode.get());
     },
     'click .join-organization' : function () {
-    Organizations.update ({ _id: this.id },{ name: this.name, "members.$.name": this.username,  "members.$.memberId": this.userId},{ upsert: true });
+    Organizations.this.organization.update ({ _id: this.id },{ name: this.name, "members.$.name": this.username,  "members.$.memberId": this.userId},{ upsert: true });
        
     Meteor.users.update({_id: this.userId}, { orgs: newOrg  }, { upsert: true });  }
 

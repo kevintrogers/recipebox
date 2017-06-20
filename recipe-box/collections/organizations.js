@@ -27,7 +27,7 @@ OrganizationSchema = new SimpleSchema ({
                 type: "hidden"
             },
             autoValue: function() {
-                return Meteor.userId;
+                return this.userId;
         }
     },
     members: {
@@ -38,19 +38,11 @@ OrganizationSchema = new SimpleSchema ({
             type: "hidden"
                 },
      },
-        // "members.$": {
-        //     type: Object
-        // },
-        // "members.$.name": {
-        //     type: String,
-        //     label: "Name"
-            
-        // },
         "members.$.memberId": {
             type: String,
             label: "Member ID",
                 autoValue: function() {
-                        return this.userId;
+                        return this.userId();
                 }
         },
     createdAt: {
@@ -71,18 +63,7 @@ Meteor.methods({
     deleteOrganizations: function(id) {
         Organizations.remove(id);
     },
-//     joinOrganization: function (organization, id) {
-//   Organizations.update ({
-      
-//   },
-//   { $set:{ 
-//           "organization": organization,
-//           "members.$.memberId" : this.userId }
-//   },
-//   {update:true
-//   });
-// }
-        
+  
     
 });
 

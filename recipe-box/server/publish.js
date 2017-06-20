@@ -18,7 +18,7 @@ Meteor.publish('singleRecipe', function(id) {
     return Organizations.find();
   });
   Meteor.publish("users", function(){
-  return Meteor.users.find();
-})
+  return Meteor.users.find({_id: this.userId});
+});
 }
  

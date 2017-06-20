@@ -1,9 +1,10 @@
 Template.Organizations.onCreated(function() {
   this.autorun(() => {
     this.subscribe('organizations');
+    this.subscribe('users');
   });
 });
-
+Meteor.subscribe("users");
 Template.Organizations.helpers({
     organizations()  {
         return Organizations.find({});

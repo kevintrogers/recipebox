@@ -15,7 +15,7 @@ $background-color: #fafafa;
 }
 .svg-box {
       position: relative;
-    left: 33.3333%;
+    margin-left: 42.5%;
 }
 .sign-border {
   -webkit-clip-path: polygon(50% 20%, 100% 30%, 90% 70%, 50% 80%, 10% 70%, 0 30%);
@@ -42,7 +42,7 @@ $background-color: #fafafa;
 
 .login a{
   color: #fff;
-  margin: .5em;
+  padding: .5em;
 }
 
 
@@ -149,23 +149,28 @@ button.new-recipe {
 @media (min-width: 768px) {  }
 
 /* Medium devices (desktops, 992px and up) */
+.banner {
+
+  margin-top: 0;
+}
 @media (min-width: 992px) {
   .login {
-    padding: 2em;
+    padding-bottom: 2em;
     font-size: 1.25em;
 }
   .side-navigation {
   display: block;
   background: darkgreen;
   height: 100vh;
-  margin-top: -1.5em;
+  
 }
 .side-navigation ul {
   position: fixed;
+  height: 100%;
 }
 
 .side-navigation li {
-  float:none;
+  float: none;
   font-size: 1.5em;
   padding:.75em;
   
