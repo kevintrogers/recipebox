@@ -34,27 +34,22 @@ OrganizationSchema = new SimpleSchema ({
         type: Array,
         optional: true,
         minCount: 0,
-        // autoform: {
-        //     type: "hidden"
-        //         },
      },
-     "members.$" : {
-         type: Object,
-        //  autoform: {
-        //             type: "hidden"
-        //         },
-     },
-             "members.$.name" : {
+         "members.$" : {
+             type: Object,
+         },
+         "members.$.name" : {
             type: String,
             label: "Your Name",
-                // autoform: {
-                //     type: "hidden"
-                // },
-                // autoValue: function () {
-                //     let user = Meteor.user();
-                //     return user.username;
-                // },
-        },
+                autoValue: function () {
+                    let user = Meteor.user();
+                    if (!user.username){
+                        return this.val();
+                    } else {
+                        return user.username;
+                    }
+                }
+            },
         "members.$.memberId": {
             type: String,
             label: "Member ID",
