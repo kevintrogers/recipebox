@@ -27,7 +27,10 @@ Template.Organizations.events({
         Session.set('leaveOrganization', true);
         Session.set('joinOrganization', false);
         Session.set('newOrganization', false);
-      }
+      },
+      'click .organization-join': function() {
+        Meteor.call('joinOrganization', this._id, this.userId);
+    }
       
 });
 
