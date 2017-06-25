@@ -43,10 +43,11 @@ OrganizationSchema = new SimpleSchema ({
             label: "Your Name",
                 autoValue: function () {
                     let user = Meteor.user();
-                    if (!user.username){
-                        return this.val();
-                    } else {
+                    if (user.username){
                         return user.username;
+                    } else {
+                        user.username = $(this).val();
+                        return $(this).val();
                     }
                 }
             },
@@ -76,6 +77,13 @@ OrganizationSchema = new SimpleSchema ({
 
 
 Meteor.methods({
+    joinOrganization: function(id, userID) {
+        Organizations.update(id, {
+            $set: {
+                members: userID
+            }
+        });
+    },
     deleteOrganizations: function(id) {
         Organizations.remove(id);
     },
