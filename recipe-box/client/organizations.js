@@ -29,7 +29,7 @@ Template.Organizations.events({
         Session.set('newOrganization', false);
       },
       'click .organization-join': function() {
-        Meteor.call('joinOrganization', this._id, this.userId);
+        Meteor.call('joinOrganization');
     }
       
 });

@@ -16,7 +16,7 @@ Recipes.allow({
 });
 
 ShoppingItems.allow({
-    insert: function(userId){
+    insert: function(userId, doc){
         return !!userId;
     },
     update: function(userId, doc){

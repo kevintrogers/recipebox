@@ -19,14 +19,7 @@ Template.Organizations.events({
     },
     'click .fa-pencil' : function (event, template) {
         template.editMode.set(!template.editMode.get());
-    },
-    'click .join-organization' : function () {
-    Organizations.this.organization.update ({ _id: this.id },{ name: this.name, "members.$.name": this.username,  "members.$.memberId": this.userId},{ upsert: true });
-       
-    Meteor.users.update({_id: this.userId}, { orgs: newOrg  }, { upsert: true });  }
-
-        
-
+    }
     
 });
 

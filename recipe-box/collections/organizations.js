@@ -78,12 +78,13 @@ OrganizationSchema = new SimpleSchema ({
 
 Meteor.methods({
     joinOrganization: function(id, userID) {
-        Organizations.update(id, {
+        Organizations.update({_id:id}, {
             $set: {
-                members: userID
+                'members.$.memberId': this.userId
             }
         });
     },
+    
     deleteOrganizations: function(id) {
         Organizations.remove(id);
     },

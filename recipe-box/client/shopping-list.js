@@ -27,7 +27,7 @@ Template.ShoppingList.helpers({
 Template.OtherItems.helpers({
     otherItems: () => {
  
-      var listItems = ShoppingItems.find({});
+      var listItems = ShoppingItems.find({author: Meteor.userId()});
 
         return listItems;
     }
