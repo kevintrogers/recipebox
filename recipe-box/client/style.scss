@@ -148,14 +148,14 @@ button.new-recipe {
 
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {  }
+@media (min-width: 992px) {  
 
 /* Medium devices (desktops, 992px and up) */
 .banner {
 
   margin-top: 0;
 }
-@media (min-width: 992px) {
+
   .login {
     padding-bottom: 2em;
     font-size: 1.25em;

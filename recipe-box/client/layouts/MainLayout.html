@@ -1,9 +1,11 @@
 <template name='MainLayout'>
     {{> Header}}
     {{> SmallNav}}
-    <main class='main-layout'>
-        {{> SideNav}}
-        {{> Template.dynamic template=main}}
-    </main>
+        <main class='main-layout'>
+            <div class='row'>
+                {{> SideNav}}
+                {{> Template.dynamic template=main}}
+            </div>
+        </main>
 </template>
 
