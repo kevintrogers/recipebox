@@ -2,25 +2,16 @@
   "name": "recipe-box",
   "private": true,
    "version": "0.2.6",
-  "description": "A shopping list builder using Meteor JS",
-  "engines": {
-    "node": "6.10.2"
-  },
-   "scripts": {
-    "start": "node index.js"
+  "description": "A shopping list builder using Meteor J",
+ 
+  "scripts": {
+    "start": "meteor run"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "bcrypt": "^1.0.2",
     "meteor-node-stubs": "~0.2.4",
     "simpl-schema": "^0.2.3",
-    "ejs": "2.5.6",
-    "express": "4.15.2"
-  },
-    "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+
+  }
 }
